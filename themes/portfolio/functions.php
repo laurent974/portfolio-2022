@@ -1,5 +1,9 @@
 <?php
 
+// require_once( __DIR__ . '/vendor/autoload.php' );
+
+$timber = new Timber\Timber();
+
 // Ajouter la prise en charge des images mises en avant
 add_theme_support( 'post-thumbnails' );
 
