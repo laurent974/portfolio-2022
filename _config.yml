@@ -1,2 +1,2 @@
-sass:
-  implementation: sass-embedded
+# sass:
+#   implementation: sass-embedded
