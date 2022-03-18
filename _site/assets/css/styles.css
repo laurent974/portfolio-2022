@@ -1,3 +1,11 @@
-.red {
-  color: blue;
-}
+:root { --background: black; }
+
+.media { color: black; }
+
+:root, [data-scheme="nord"]:root { --color: white; }
+
+body { background: black; }
+
+.terminal { color: white; }
+
+/*# sourceMappingURL=styles.css.map */
