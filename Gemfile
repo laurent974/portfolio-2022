@@ -3,4 +3,8 @@
 source "https://rubygems.org"
 
 gem "jekyll"
-gem 'sass-embedded', '~> 1.0'
+
+group :jekyll_plugins do
+  gem 'jekyll-sass-converter', github: 'jekyll/jekyll-sass-converter'
+  gem 'sass-embedded'
+end
