@@ -1,16 +1,1 @@
-/* Abstracts */
-:root { --background: black; }
-
-/* Mixins */
-.media { color: black; }
-
-/* Schemes */
-:root, [data-scheme="nord"]:root { --color: white; }
-
-/* Base */
-body { background: black; }
-
-/* Components */
-.terminal { color: white; }
-
-/*# sourceMappingURL=styles.css.map */
+:root{--background: black}.media{color:#000}:root,:root[data-scheme=nord]{--color: white}body{background:blue}.terminal{color:#fff}

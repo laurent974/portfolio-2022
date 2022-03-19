@@ -1,20 +1,21 @@
 const { src, series, dest } = require("gulp");
 const sass = require("gulp-dart-sass");
 const paths = require("./paths");
-const cssnano = require("cssnano");
-const postcss = require("gulp-postcss");
 const gutil = require("gulp-util");
-const browserSync = require("browser-sync");
-const autoprefixer = require("autoprefixer");
+const autoprefixer = require("gulp-autoprefixer");
+const rename = require("gulp-rename");
 
 function scssBuild() {
-  return src(paths.sassFiles + "/main.scss")
+  return src("_assets/sass/main.scss")
     .pipe(
-      postcss([autoprefixer({ BrowsersList: ["last 2 versions"] }), cssnano()])
+      sass({
+        includePaths: ["node_modules"],
+        outputStyle: "compressed",
+      })
     )
-    .pipe(dest(paths.jekyllCssFiles))
+    .pipe(autoprefixer("last 2 version"))
+    .pipe(rename("styles.css"))
     .pipe(dest(paths.siteCssFiles))
-    .pipe(browserSync.stream())
     .on("error", gutil.log);
 }
 

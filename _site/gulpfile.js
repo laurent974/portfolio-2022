@@ -30,7 +30,7 @@ task("serve", function () {
   });
   watch(["_config.yml"], series(["watch"]));
   // Watch .scss files and pipe changes to browserSync
-  watch("_assets/scss/**/*.scss", series([scss.tasks]));
+  watch("_assets/sass/**/*.scss", series([scss.tasks]));
   // Watch .js files
   watch("_assets/js/**/*.js", series([js.tasks]));
   // Watch icons files and pipe changes to browserSync

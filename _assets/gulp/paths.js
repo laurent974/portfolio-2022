@@ -11,11 +11,12 @@ paths.siteAssetsDir = "_site/assets/"; // The resulting static site's assets.
 paths.postFolder = "_posts";
 paths.fontFolder = "fonts";
 paths.scriptFolder = "js";
-paths.stylesFolder = "sass";
+paths.stylesFolder = "css";
+paths.sassFolder = "sass";
 paths.iconfontFolder = "icons";
 
 // Asset files locations.
-paths.sassFiles = paths.assetsDir + paths.stylesFolder;
+paths.sassFiles = paths.assetsDir + paths.sassFolder;
 paths.jsFiles = paths.assetsDir + paths.scriptFolder;
 paths.fontFiles = paths.assetsDir + paths.fontFolder;
 paths.iconfontFiles = paths.assetsDir + paths.iconfontFolder;

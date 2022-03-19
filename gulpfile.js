@@ -6,6 +6,7 @@ const iconfont = require("./_assets/gulp/iconfont");
 const fonts = require("./_assets/gulp/fonts");
 const jekyll = require("./_assets/gulp/jekyll");
 const paths = require("./_assets/gulp/paths");
+const reload = browserSync.reload;
 
 /* Tache par défault */
 task(
@@ -28,23 +29,35 @@ task("serve", function () {
     logLevel: "debug",
     open: true, // Toggle to auto-open page when starting
   });
-  watch(["_config.yml"], series(["watch"]));
+  watch(["_config.yml"], series(["watch"])).on("change", reload);
   // Watch .scss files and pipe changes to browserSync
-  watch("_assets/sass/**/*.scss", series([scss.tasks]));
+  watch("_assets/sass/**/*.scss", series([scss.tasks])).on("change", reload);
   // Watch .js files
-  watch("_assets/js/**/*.js", series([js.tasks]));
+  watch("_assets/js/**/*.js", series([js.tasks])).on("change", reload);
   // Watch icons files and pipe changes to browserSync
-  watch("_assets/icons/**/*", series([iconfont.tasks]));
+  watch("_assets/icons/**/*", series([iconfont.tasks])).on("change", reload);
   // Watch posts
-  watch("_posts/**/*.+(md|markdown|MD)", series(["watch"]));
+  watch("_posts/**/*.+(md|markdown|MD)", series(["watch"])).on(
+    "change",
+    reload
+  );
   // Watch drafts if --drafts flag was passed
   if (module.exports.drafts) {
-    watch("_drafts/*.+(md|markdown|MD)", series(["watch"]));
+    watch("_drafts/*.+(md|markdown|MD)", series(["watch"])).on(
+      "change",
+      reload
+    );
   }
   // Watch html and markdown files
-  watch(["**/*.+(html|md|markdown|MD)", "!_site/**/*.*"], series(["watch"]));
+  watch(["**/*.+(html|md|markdown|MD)", "!_site/**/*.*"], series(["watch"])).on(
+    "change",
+    reload
+  );
   // Watch RSS feed
-  watch("feed.xml", series(["watch"]));
+  watch("feed.xml", series(["watch"])).on("change", reload);
   // Watch data files
-  watch("_data/**.*+(yml|yaml|csv|json)", series(["watch"]));
+  watch("_data/**.*+(yml|yaml|csv|json)", series(["watch"])).on(
+    "change",
+    reload
+  );
 });
