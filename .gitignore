@@ -2,3 +2,4 @@ node_modules/
 *.lock
 .jekyll-cache/
 _site/assets/**/*
+*-lock.json
