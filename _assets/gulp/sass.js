@@ -12,6 +12,7 @@ function scssBuild() {
     .pipe(
       postcss([autoprefixer({ BrowsersList: ["last 2 versions"] }), cssnano()])
     )
+    .pipe(dest(paths.jekyllCssFiles))
     .pipe(dest(paths.siteCssFiles))
     .pipe(browserSync.stream())
     .on("error", gutil.log);
