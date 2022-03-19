@@ -1,2 +1,3 @@
-# sass:
+sass:
+  sass_dir: _assets/sass
 #   implementation: sass-embedded

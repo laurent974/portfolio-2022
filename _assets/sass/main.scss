@@ -1,14 +1,14 @@
-// Abstracts
+/* Abstracts */
 @import "abstracts/variables";
 
-// Mixins
+/* Mixins */
 @import "mixin/media";
 
-// Schemes
+/* Schemes */
 @import "scheme/nord";
 
-// Base
+/* Base */
 @import "base/base";
 
-// Components
+/* Components */
 @import "component/terminal";
