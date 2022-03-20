@@ -1,4 +1,6 @@
 node_modules/
 *.lock
 .jekyll-cache/
-_site/assets/**/*
+_site/**/*
+*-lock.json
+assets/fonts/**/*
