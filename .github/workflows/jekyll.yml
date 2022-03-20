@@ -2,7 +2,7 @@ name: Build and serve portfolio on Github Pages
 
 on:
   push:
-    branches: [ master ]
+    branches: [ 'master', 'feature/ci' ]
 
 jobs:
   build:
