@@ -20,6 +20,12 @@ jobs:
     - uses: helaili/jekyll-action@v2
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
+    # Sets up node
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 12
+    - run: npm ci
+    - run: gulp
 #     - name: Build the site in the jekyll/builder container
 #       run: |
 #         docker run \
