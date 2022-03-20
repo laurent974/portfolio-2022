@@ -2,10 +2,18 @@ const { src, series, dest } = require("gulp");
 const paths = require("./paths");
 const gutil = require("gulp-util");
 const iconfont = require("gulp-iconfont");
+const iconfontCss = require("gulp-iconfont-css");
 const runTimestamp = Math.round(Date.now() / 1000);
 
 function iconfontBuild() {
   return src(paths.iconfontFiles + "/**/*.svg")
+    .pipe(
+      iconfontCss({
+        fontName: "icons",
+        targetPath: "../../../_assets/sass/font/icons.scss",
+        fontPath: "../fonts/",
+      })
+    )
     .pipe(
       iconfont({
         fontName: "icon",
