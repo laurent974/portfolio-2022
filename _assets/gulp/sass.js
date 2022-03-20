@@ -6,10 +6,16 @@ const autoprefixer = require("gulp-autoprefixer");
 const rename = require("gulp-rename");
 const purgecss = require("gulp-purgecss");
 const sourcemaps = require("gulp-sourcemaps");
+const stylelint = require("gulp-stylelint");
 
 function scssBuild() {
   return src("_assets/sass/main.scss")
     .pipe(sourcemaps.init())
+    .pipe(
+      stylelint({
+        reporters: [{ formatter: "verbose", console: true, fix: true }],
+      })
+    )
     .pipe(
       sass({
         includePaths: ["node_modules"],

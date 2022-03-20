@@ -1,7 +1,9 @@
 {
     "plugins": [
-        "stylelint-order"
+        "stylelint-order",
+        "stylelint-no-unsupported-browser-features"
     ],
+    "extends": "stylelint-config-standard-scss",
     "ignoreFiles": ["**/*.js","**/*.jsx","**/*.ts","**/*.tsx","**/*.html"],
     "rules": {
         "declaration-block-no-redundant-longhand-properties": [
