@@ -24,7 +24,7 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: 12
-    - run: npm ci
+    - run: npm install
     - run: gulp
 #     - name: Build the site in the jekyll/builder container
 #       run: |
