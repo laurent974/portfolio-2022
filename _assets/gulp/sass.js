@@ -4,9 +4,12 @@ const paths = require("./paths");
 const gutil = require("gulp-util");
 const autoprefixer = require("gulp-autoprefixer");
 const rename = require("gulp-rename");
+const purgecss = require("gulp-purgecss");
+const sourcemaps = require("gulp-sourcemaps");
 
 function scssBuild() {
   return src("_assets/sass/main.scss")
+    .pipe(sourcemaps.init())
     .pipe(
       sass({
         includePaths: ["node_modules"],
@@ -15,6 +18,12 @@ function scssBuild() {
     )
     .pipe(autoprefixer("last 2 version"))
     .pipe(rename("styles.css"))
+    .pipe(
+      purgecss({
+        content: ["_site/**/*.html"],
+      })
+    )
+    .pipe(sourcemaps.write("."))
     .pipe(dest(paths.siteCssFiles))
     .on("error", gutil.log);
 }
