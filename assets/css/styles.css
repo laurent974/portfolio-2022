@@ -1,0 +1,38 @@
+:root { --gradient-1: linear-gradient(90deg, #6da6be 0%, #4b859e 50%, #6da6be 100%); }
+
+:root { --noise-1: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.005' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); --noise-filter-1: contrast(300%) brightness(100%); }
+
+:root, [data-scheme="nord"]:root { --text-1: #fff; --text-2: #2e3440; --text-3: #ebcb8b; --icon-default: #fff; --highlighted-icon: #a3be8c; --branch-icon: #a3be8c; --linux-icon: #fff; --surface-1: #79a2d4; --number-default: #4c566a; --vim-expression: #81a1c1; --vim-method: #88c0d0; --vim-operator: #81a1c1; --vim-string: #a3be8c; --vim-nav-icon: #b48ead; }
+
+/* Box sizing rules */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Remove default margin */
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd { margin: 0; }
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"], ol[role="list"] { list-style: none; }
+
+/* Set core root defaults */
+html:focus-within { scroll-behavior: smooth; }
+
+/* Set core body defaults */
+body { min-height: 100vh; line-height: 1.5; text-rendering: optimizespeed; }
+
+/* A elements that don't have a class get default styles */
+a:not([class]) { text-decoration-skip-ink: auto; }
+
+/* Make images easier to work with */
+img, picture { display: block; max-width: 100%; }
+
+/* Inherit fonts for inputs and buttons */
+input, button, textarea, select { font: inherit; }
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) { html:focus-within { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
+
+body { background-image: var(--gradient-1), var(--noise-1); filter: var(--noise-filter-1); background-size: cover; }
+
+.terminal { color: white; }
+
+/*# sourceMappingURL=styles.css.map */

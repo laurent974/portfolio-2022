@@ -1,0 +1,30 @@
+{
+	"version": 3,
+	"file": "styles.css",
+	"sources": [
+		"styles.scss",
+		"_assets/sass/main.scss",
+		"_assets/sass/abstracts/variables.scss",
+		"_assets/sass/abstracts/gradients.scss",
+		"_assets/sass/abstracts/noises.scss",
+		"_assets/sass/mixin/media.scss",
+		"_assets/sass/scheme/nord.scss",
+		"_assets/sass/base/reset.scss",
+		"_assets/sass/base/base.scss",
+		"_assets/sass/component/terminal.scss"
+	],
+	"sourcesContent": [
+		"@import \"main\";\n",
+		"// Abstracts\n\n@import \"abstracts/variables\";\n\n// Mixins\n\n@import \"mixin/media\";\n\n// Schemes\n\n@import \"scheme/nord\";\n\n// Base\n\n@import \"base/reset\";\n@import \"base/base\";\n\n// Components\n\n@import \"component/terminal\";\n",
+		"@import \"gradients\";\n@import \"noises\";\n",
+		":root {\r\n  --gradient-1: linear-gradient(90deg, #6da6be 0%, #4b859e 50%, #6da6be 100%);\r\n}\r\n",
+		":root {\r\n  --noise-1: url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.005' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\");\r\n  --noise-filter-1: contrast(300%) brightness(100%);\r\n}\r\n",
+		"$breakpoints: (\n  \"small\": (\n    min-width: 576px\n  ),\n  \"medium\": (\n    min-width: 992px\n  ),\n  \"large\": (\n    min-width: 1400px\n  )\n);\n\n@mixin media($name) {\n\n  @if map-has-key($breakpoints, $name) {\n\n    @media #{inspect(map-get($breakpoints, $name))} {\n      @content;\n    }\n  }\n}\n",
+		":root,\n:root[data-scheme=\"nord\"] {\n  --text-1: #fff;\n  --text-2: #2e3440;\n  --text-3: #ebcb8b;\n  --icon-default: #fff;\n  --highlighted-icon: #a3be8c;\n  --branch-icon: #a3be8c;\n  --linux-icon: #fff;\n  --surface-1: #79a2d4;\n  --number-default: #4c566a;\n  --vim-expression: #81a1c1;\n  --vim-method: #88c0d0;\n  --vim-operator: #81a1c1;\n  --vim-string: #a3be8c;\n  --vim-nav-icon: #b48ead;\n}\n",
+		"/* Box sizing rules */\r\n*,\r\n*::before,\r\n*::after {\r\n  box-sizing: border-box;\r\n}\r\n\r\n/* Remove default margin */\r\nbody,\r\nh1,\r\nh2,\r\nh3,\r\nh4,\r\np,\r\nfigure,\r\nblockquote,\r\ndl,\r\ndd {\r\n  margin: 0;\r\n}\r\n\r\n/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */\r\nul[role=\"list\"],\r\nol[role=\"list\"] {\r\n  list-style: none;\r\n}\r\n\r\n/* Set core root defaults */\r\nhtml:focus-within {\r\n  scroll-behavior: smooth;\r\n}\r\n\r\n/* Set core body defaults */\r\nbody {\r\n  min-height: 100vh;\r\n  line-height: 1.5;\r\n  text-rendering: optimizespeed;\r\n}\r\n\r\n/* A elements that don't have a class get default styles */\r\na:not([class]) {\r\n  text-decoration-skip-ink: auto;\r\n}\r\n\r\n/* Make images easier to work with */\r\nimg,\r\npicture {\r\n  display: block;\r\n  max-width: 100%;\r\n}\r\n\r\n/* Inherit fonts for inputs and buttons */\r\ninput,\r\nbutton,\r\ntextarea,\r\nselect {\r\n  font: inherit;\r\n}\r\n\r\n/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */\r\n\r\n@media (prefers-reduced-motion: reduce) {\r\n  html:focus-within {\r\n    scroll-behavior: auto;\r\n  }\r\n\r\n  *,\r\n  *::before,\r\n  *::after {\r\n    animation-duration: .01ms !important;\r\n    animation-iteration-count: 1 !important;\r\n    transition-duration: .01ms !important;\r\n    scroll-behavior: auto !important;\r\n  }\r\n}\r\n",
+		"body {\n  background-image: var(--gradient-1), var(--noise-1);\n  filter: var(--noise-filter-1);\n  background-size: cover;\n}\n",
+		".terminal {\n  color: white;\n}\n"
+	],
+	"names": [],
+	"mappings": "CGAC,AAAD,IAAK,CAAC,EACJ,YAAY,CAAA,8DAAC,GACd;;CCFA,AAAD,IAAK,CAAC,EACJ,SAAS,CAAA,yTAAC,EACV,gBAAgB,CAAA,gCAAC,GAClB;;CEHA,AAAD,IAAK,GACA,AAAA,WAAC,CAAY,MAAM,AAAlB,EAAL,IAAI,CAAqB,EACxB,QAAQ,CAAA,KAAC,EACT,QAAQ,CAAA,QAAC,EACT,QAAQ,CAAA,QAAC,EACT,cAAc,CAAA,KAAC,EACf,kBAAkB,CAAA,QAAC,EACnB,aAAa,CAAA,QAAC,EACd,YAAY,CAAA,KAAC,EACb,WAAW,CAAA,QAAC,EACZ,gBAAgB,CAAA,QAAC,EACjB,gBAAgB,CAAA,QAAC,EACjB,YAAY,CAAA,QAAC,EACb,cAAc,CAAA,QAAC,EACf,YAAY,CAAA,QAAC,EACb,cAAc,CAAA,QAAC,GAChB;;AChBD,sBAAsB;AACtB,AAAA,CAAC,EACD,CAAC,EAAE,MAAM,EACT,CAAC,EAAE,KAAK,CAAC,EACP,UAAU,EAAE,UAAU,GACvB;;AAED,2BAA2B;AAC3B,AAAA,IAAI,EACJ,EAAE,EACF,EAAE,EACF,EAAE,EACF,EAAE,EACF,CAAC,EACD,MAAM,EACN,UAAU,EACV,EAAE,EACF,EAAE,CAAC,EACD,MAAM,EAAE,CAAC,GACV;;AAED,4GAA4G;AAC5G,AAAA,EAAE,CAAA,AAAA,IAAC,CAAK,MAAM,AAAX,GACH,EAAE,CAAA,AAAA,IAAC,CAAK,MAAM,AAAX,EAAa,EACd,UAAU,EAAE,IAAI,GACjB;;AAED,4BAA4B;AAC5B,AAAA,IAAI,CAAC,YAAY,CAAC,EAChB,eAAe,EAAE,MAAM,GACxB;;AAED,4BAA4B;AAC5B,AAAA,IAAI,CAAC,EACH,UAAU,EAAE,KAAK,EACjB,WAAW,EAAE,GAAG,EAChB,cAAc,EAAE,aAAa,GAC9B;;AAED,2DAA2D;AAC3D,AAAA,CAAC,CAAA,GAAK,EAAA,AAAA,KAAC,AAAA,GAAQ,EACb,wBAAwB,EAAE,IAAI,GAC/B;;AAED,qCAAqC;AACrC,AAAA,GAAG,EACH,OAAO,CAAC,EACN,OAAO,EAAE,KAAK,EACd,SAAS,EAAE,IAAI,GAChB;;AAED,0CAA0C;AAC1C,AAAA,KAAK,EACL,MAAM,EACN,QAAQ,EACR,MAAM,CAAC,EACL,IAAI,EAAE,OAAO,GACd;;AAED,iGAAiG;AAEjG,MAAM,iCACJ,GAAA,AAAA,IAAI,CAAC,YAAY,CAAC,EAChB,eAAe,EAAE,IAAI,GACtB,CAED,AAAA,CAAC,EACD,CAAC,EAAE,MAAM,EACT,CAAC,EAAE,KAAK,CAAC,EACP,kBAAkB,EAAE,gBAAgB,EACpC,yBAAyB,EAAE,YAAY,EACvC,mBAAmB,EAAE,gBAAgB,EACrC,eAAe,EAAE,eAAe,GACjC,EATA;;AChEH,AAAA,IAAI,CAAC,EACH,gBAAgB,EAAE,iBAAiB,EAAE,cAAc,EACnD,MAAM,EAAE,qBAAqB,EAC7B,eAAe,EAAE,KAAK,GACvB;;ACJD,AAAA,SAAS,CAAC,EACR,KAAK,EAAE,KAAK,GACb"
+}
