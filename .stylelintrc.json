@@ -4,29 +4,29 @@
         "stylelint-no-unsupported-browser-features"
     ],
     "extends": "stylelint-config-standard-scss",
-    "ignoreFiles": ["**/*.js","**/*.jsx","**/*.ts","**/*.tsx","**/*.html"],
+    "ignoreFiles": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "**/*.html"],
     "rules": {
         "declaration-block-no-redundant-longhand-properties": [
-          true,
-          {
-            "ignoreShorthands": ["flex-flow"]
-          }
+            true,
+            {
+                "ignoreShorthands": ["flex-flow"]
+            }
         ],
         "function-comma-space-after": "always",
         "declaration-block-no-duplicate-properties": null,
         "comment-empty-line-before": [
-          "always"
+            "always"
         ],
         "at-rule-no-unknown": [true, {
-          "ignoreAtRules": ["function", "if", "each", "include", "mixin"]
+            "ignoreAtRules": ["function", "if", "each", "include", "mixin"]
         }],
         "at-rule-empty-line-before": [
-          "always",
-          {
-            "except": [
-              "after-same-name"
-            ]
-          }
+            "always",
+            {
+                "except": [
+                    "after-same-name"
+                ]
+            }
         ],
         "number-leading-zero": "never",
         "indentation": [
@@ -80,21 +80,20 @@
             }
         ],
         "order/order": [
-                [
-                    "custom-properties",
-                    "at-variables",
-                    "declarations",
-                    "at-rules",
-                    "rules",
-                    "less-mixins"
-                ],
-                {
-                    "severity": "warning"
-                }
+            [
+                "custom-properties",
+                "at-variables",
+                "declarations",
+                "at-rules",
+                "rules",
+                "less-mixins"
+            ],
+            {
+                "severity": "warning"
+            }
         ],
         "order/properties-order": [
-            [
-                {
+            [{
                     "emptyLineBefore": "never",
                     "properties": [
                         "content"
