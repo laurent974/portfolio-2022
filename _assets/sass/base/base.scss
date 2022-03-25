@@ -1,3 +1,5 @@
 body {
-  background: var(--gradient-1);
+  background-image: var(--gradient-1), var(--noise-1);
+  filter: var(--noise-filter-1);
+  background-size: cover;
 }
