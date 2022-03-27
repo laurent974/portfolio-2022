@@ -18,6 +18,7 @@
   "homepage": "https://github.com/laurent974/portfolio-2022#readme",
   "devDependencies": {
     "browser-sync": "^2.27.9",
+    "child_process": "^1.0.2",
     "cssnano": "^5.1.4",
     "del": "^6.0.0",
     "gulp": "^4.0.2",

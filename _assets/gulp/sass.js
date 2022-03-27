@@ -30,6 +30,7 @@ function scssBuild() {
       })
     )
     .pipe(sourcemaps.write("."))
+    .pipe(dest(paths.jekyllAssetsDir))
     .pipe(dest(paths.siteCssFiles))
     .on("error", gutil.log);
 }

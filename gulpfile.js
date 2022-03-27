@@ -6,6 +6,7 @@ const iconfont = require("./_assets/gulp/iconfont");
 const fonts = require("./_assets/gulp/fonts");
 const jekyll = require("./_assets/gulp/jekyll");
 const paths = require("./_assets/gulp/paths");
+const cp = require('child_process');
 const reload = browserSync.reload;
 
 /* Tache par défault */
@@ -16,8 +17,9 @@ task(
 
 /* Watch */
 task("watch", function (callback) {
-  browserSync.reload();
-  callback();
+  cp.spawn( 'jekyll' , ['build'], {stdio: 'inherit'}).on('done', () => {
+    callback()
+  });
 });
 
 /* Browser sync + jekyll build serve */

@@ -1,5 +1,5 @@
-sass:
-  sass_dir: _assets/sass
+# sass:
+#   sass_dir: _assets/sass
 #   implementation: sass-embedded
 exclude: [
   'gulpfile.js',
