@@ -18,7 +18,10 @@ task(
 /* Watch */
 task("watch", function (callback) {
   cp.spawn( 'jekyll' , ['build'], {stdio: 'inherit'}).on('done', () => {
-    callback()
+    setTimeout(() => {
+      callback(),
+      200
+    })
   });
 });
 
