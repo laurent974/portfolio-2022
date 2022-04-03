@@ -3,6 +3,11 @@ html {
 }
 
 body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
   background-image: var(--gradient-1), var(--noise-1);
   background-size: cover;
   color: var(--text-1);

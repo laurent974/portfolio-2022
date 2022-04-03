@@ -1,13 +1,22 @@
 :root,
 :root[data-scheme="nord"] {
+  // Text
   --text-1: #fff;
   --text-2: #2e3440;
   --text-3: #ebcb8b;
+
+  // Icons
   --icon-default: #fff;
   --highlighted-icon: #a3be8c;
   --branch-icon: #a3be8c;
   --linux-icon: #fff;
-  --surface-1: #79a2d4;
+
+  // Backgrounds
+  --surface-1: #2e3440;
+  --surface-2: #79a2d4;
+  --surface-3: #272b34;
+
+  // Vim
   --number-default: #4c566a;
   --vim-expression: #81a1c1;
   --vim-method: #88c0d0;

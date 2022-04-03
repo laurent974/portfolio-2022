@@ -1,5 +1,11 @@
 .terminal {
-  &-header {
+  width: 80vw;
+  height: 80vh;
+  overflow: hidden;
+  border-radius: var(--border-radius-1);
+  background-color: var(--surface-1);
 
+  &-header {
+    background-color: var(--surface-3);
   }
 }
