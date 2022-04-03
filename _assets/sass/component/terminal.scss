@@ -1,11 +1,13 @@
 .terminal {
   width: 80vw;
   height: 80vh;
-  overflow: hidden;
   border-radius: var(--border-radius-1);
   background-color: var(--surface-1);
 
   &-header {
+    padding: 0 2.2rem;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 -2px 48px rgb(0 0 0 / 15%);
     background-color: var(--surface-3);
   }
 }
