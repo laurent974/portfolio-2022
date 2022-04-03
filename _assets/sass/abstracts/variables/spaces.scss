@@ -1,0 +1,120 @@
+$spaces: (
+  "0": 0,
+  "1": 1rem,
+  "2": 1.6rem,
+  "3": 2.2rem,
+  "4": 3.2rem,
+);
+
+@each $key, $value in $spaces {
+  // Margin
+  .mt-#{ $key } {
+    margin-top: $value;
+  }
+
+  .mr-#{ $key } {
+    margin-right: $value;
+  }
+
+  .mb-#{ $key } {
+    margin-bottom: $value;
+  }
+
+  .ml-#{ $key } {
+    margin-left: $value;
+  }
+
+  .mx-#{ $key } {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+
+  .my-#{ $key } {
+    margin-inline: $value;
+  }
+
+  // Padding
+  .pt-#{ $key } {
+    padding-top: $value;
+  }
+
+  .pr-#{ $key } {
+    padding-right: $value;
+  }
+
+  .pb-#{ $key } {
+    padding-bottom: $value;
+  }
+
+  .pl-#{ $key } {
+    padding-left: $value;
+  }
+
+  .px-#{ $key } {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+
+  .py-#{ $key } {
+    padding-inline: $value;
+  }
+
+  // Breakpoints
+
+  @each $breakpoint, $bpv in $breakpoints {
+
+    @media (min-width: #{$bpv}) {
+      // Margin
+      .#{ $breakpoint }\:mt-#{ $key } {
+        margin-top: $value;
+      }
+
+      .#{ $breakpoint }\:mr-#{ $key } {
+        margin-right: $value;
+      }
+
+      .#{ $breakpoint }\:mb-#{ $key } {
+        margin-bottom: $value;
+      }
+
+      .#{ $breakpoint }\:ml-#{ $key } {
+        margin-left: $value;
+      }
+
+      .#{ $breakpoint }\:mx-#{ $key } {
+        margin-top: $value;
+        margin-bottom: $value;
+      }
+
+      .#{ $breakpoint }\:my-#{ $key } {
+        margin-inline: $value;
+      }
+
+      // Padding
+      .#{ $breakpoint }\:pt-#{ $key } {
+        padding-top: $value;
+      }
+
+      .#{ $breakpoint }\:pr-#{ $key } {
+        padding-right: $value;
+      }
+
+      .#{ $breakpoint }\:pb-#{ $key } {
+        padding-bottom: $value;
+      }
+
+      .#{ $breakpoint }\:pl-#{ $key } {
+        padding-left: $value;
+      }
+
+      .#{ $breakpoint }\:px-#{ $key } {
+        padding-top: $value;
+        padding-bottom: $value;
+      }
+
+      .#{ $breakpoint }\:py-#{ $key } {
+        padding-inline: $value;
+      }
+    }
+  }
+}
